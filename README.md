@@ -18,6 +18,10 @@ Glyph is a web-based tool that converts standard Latin characters to visually si
 - **Mobile Responsive**: Works on all device sizes
 - **Detailed Statistics**: View exactly how many characters were transformed
 
+## 🔮 
+
+![Demo](assets/demo.webp)
+
 
 ## 🛠️ How It Works
 
