@@ -1,0 +1,21 @@
+{
+  "name": "Glyph - Text Transformation",
+  "short_name": "Glyph",
+  "description": "Transform your text into magical glyphs",
+  "start_url": "/glyph/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#8a2be2",
+  "icons": [
+    {
+      "src": "assets/icons/icons8-glyph-gradient-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icons8-glyph-gradient-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

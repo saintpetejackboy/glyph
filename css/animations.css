@@ -1,0 +1,405 @@
+/* Animations CSS for Glyph Project */
+
+/* Magical Spark Effect (subtle) */
+.spark {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color); /* Reduced glow */
+    z-index: 100;
+    opacity: 0;
+}
+
+@keyframes spark-animation {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x), var(--end-y)) scale(1);
+    }
+}
+
+/* Magic Wave Animation */
+.magic-wave {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    opacity: 0;
+    z-index: 5;
+}
+
+@keyframes magic-wave {
+    0% {
+        opacity: 0.8;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+/* Glyph Beam Effect */
+.glyph-beam {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+    opacity: 0;
+    z-index: 10;
+    overflow: hidden;
+}
+
+@keyframes beam-animation {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+/* Glyph Character Reveal Animation */
+@keyframes character-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Magical Rune Animation for Loading */
+@keyframes rune-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Glyph Button Hover Effects */
+.glyph-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.glyph-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    z-index: 2;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.glyph-btn:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(20);
+}	
+
+.glyph-btn:hover .btn-text {
+    color: var(--primary-dark);
+    position: relative;
+		text-shadow: none;
+    z-index: 3;
+}
+
+/* Magic Trail Effect (much more subtle) */
+.magic-trail {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+    opacity: 0;
+    z-index: 999;
+}
+
+@keyframes trail-fade {
+    0% {
+        opacity: 0.15; /* Much lower opacity */
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5); /* Less dramatic scaling */
+    }
+}
+
+/* Magic Particles Animation */
+.magic-particle {
+    position: absolute;
+    background: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes particle-float {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotate(360deg);
+    }
+}
+
+/* Glowing Effect for Highlighted Text */
+.glow {
+    animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+    0% {
+        text-shadow: 0 0 5px var(--secondary-color);
+    }
+    100% {
+        text-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--primary-color);
+    }
+}
+
+/* Copy Success Animation */
+.copy-success {
+    animation: copy-pulse 0.5s ease-in-out;
+}
+
+@keyframes copy-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Loading Runes Animation */
+.loading-rune {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+@keyframes rune-orbit {
+    0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+/* Toast Animation Enhancements */
+.custom-toast {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: toast-slide 0.3s forwards;
+}
+
+@keyframes toast-slide {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toast-exit {
+    animation: toast-fade 0.3s forwards;
+}
+
+@keyframes toast-fade {
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Floating Elements Animation */
+.float {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Subtle Background Pulse */
+.pulse-bg {
+    animation: bg-pulse 4s ease-in-out infinite;
+}
+
+@keyframes bg-pulse {
+    0%, 100% {
+        background-color: var(--dark-bg);
+    }
+    50% {
+        background-color: var(--darker-bg);
+    }
+}
+
+/* Input Focus Animation */
+.input-focus {
+    animation: focus-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes focus-glow {
+    0% {
+        box-shadow: var(--card-shadow);
+    }
+    100% {
+        box-shadow: var(--card-shadow), 0 0 20px rgba(138, 43, 226, 0.6);
+    }
+}
+
+/* Character Count Warning Animation */
+.char-warn {
+    animation: warn-pulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes warn-pulse {
+    0% {
+        color: var(--gray-text);
+    }
+    100% {
+        color: #ff5555;
+    }
+}
+
+/* Button Press Effect */
+.btn-press {
+    animation: press 0.2s ease-in-out;
+}
+
+@keyframes press {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Magical Appear Animation */
+.magical-appear {
+    animation: appear 0.5s ease-in-out forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+/* Subtle Hover Animations */
+.hover-float {
+    transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+    transform: translateY(-5px);
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Magic Cursor Animation */
+@keyframes cursor-appear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
+
+@keyframes cursor-disappear {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+    }
+}
+
+/* Screen Transition Animation */
+.screen-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes screen-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes screen-out {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
